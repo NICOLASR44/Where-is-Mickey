@@ -1,0 +1,340 @@
+@import url("https://fonts.cdnfonts.com/css/new-walt-disney-font");
+
+:root {
+  --modalBackgound: #ffffffee;
+  --modalColor: black;
+  --modalFontFamily: "New Walt Disney Font", sans-serif;
+  --modalPadding: 20px;
+  --modalBorderRadius: 20px;
+  --modalShadow: 0 4px 8px rgba(0, 0, 0);
+}
+
+* {
+  box-sizing: border-box;
+  /*
+  La propriété box-sizing détermine comment la largeur et 
+  la hauteur totales d'un élément sont calculées.
+
+  Par défaut, box-sizing est défini sur content-box, 
+  ce qui signifie que la largeur et la hauteur spécifiées 
+  d'un élément n'incluent pas le padding et les bordures. 
+  En conséquence, la taille réelle de l'élément est augmentée 
+  par la largeur des bordures et le padding.
+
+  Lorsque box-sizing est défini sur border-box, 
+  la largeur et la hauteur spécifiées d'un élément incluent 
+  le padding et les bordures. 
+  Cela signifie que la taille totale de l'élément reste la même, 
+  peu importe la quantité de padding ou l'épaisseur 
+  des bordures.
+
+  L'utilisation de * { box-sizing: border-box; } n'est pas 
+  obligatoire, mais c'est une bonne pratique largement adoptée 
+  pour faciliter la gestion des mises en page en CSS. 
+  Elle permet d'éviter les calculs complexes de dimensions 
+  et améliore la consistance de l'apparence des éléments sur 
+  la page.
+
+  */
+}
+
+html,
+body {
+  height: 100%;
+  /* On s'assure que la hauteur de notre body prenne toute la hauteur
+  de la page*/
+}
+
+body {
+  margin: 0;
+  background-color: black;
+
+  .background-container {
+    background-image: url("/images/game-over/gameOverBackground.png");
+    background-size: contain;
+    /* Pour contenir l'image dans son intégralité
+      sans l'étirer ou cacher des parties de l'image*/
+    min-width: 194vh;
+    max-width: 194vh;
+    /* Pour coller l'image au bord du viewport*/
+    min-height: 100vh;
+    max-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /*Tous les enfants de cette image se placeront 
+      en fonction de cette image*/
+    margin: 0 auto;
+    /*margin vertical à 0,
+       permet de centrer l'image avec auto*/
+
+    .popup-content {
+      display: flex;
+      flex-direction: column;
+      .BoutonOui,
+      .boutonNon,
+      .BoutonFermer {
+        border-radius: 30px;
+        font-family: var(--modalFontFamily);
+        background-color: black;
+        text-decoration: none;
+        margin: 4px;
+        color: #fff;
+      }
+    }
+
+    .titre {
+      position: absolute;
+      top: 10%;
+      left: 30%;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      color: red;
+      font-size: 4.375rem;
+      height: 25rem;
+      line-height: 25rem;
+      /* transition: all 10s linear;  */
+      /* transition-duration: 2s; */
+      animation: zoomIn 2s ease-in-out;
+    }
+    h2 {
+      color: black;
+    }
+
+    a {
+      color: #fff;
+    }
+    .popup2 {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      z-index: 999;
+    }
+
+    .popup-content {
+      background-color: var(--modalBackgound);
+      margin: 100px auto;
+      padding: var(--modalPadding);
+      border-radius: 5px;
+      height: 20%;
+      width: 40%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      font-family: var(--modalFontFamily);
+    }
+
+    #videoPlayer.play {
+      display: none;
+    }
+
+    .custom-button {
+      background-color: #ff0000; /* Rouge */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 50px 50px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* Effet de creusement */
+      transition: transform 0.3s, box-shadow 0.3s; /* Transition pour l'effet */
+      position: absolute;
+      top: 20%;
+      right: 10%;
+      height: 10%;
+    }
+
+    .custom-button:hover {
+      transform: translateY(2px); /* Effet de légère montée au survol */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Effet d'ombre plus léger au survol */
+    }
+
+    #bouton4 {
+      background-image: url(images/game-over/bouton.png);
+      height: auto;
+      width: 10%;
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      background-size: contain;
+    }
+
+    /*---------NAV------*/
+    nav {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0rem;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    nav :hover {
+      color: red;
+    }
+
+    nav > a.logo {
+      display: none;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav > ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav > ul > li > a {
+      color: #e6bf88;
+      text-decoration: none;
+      padding: 1rem;
+    }
+
+    nav > ul > li > a > i {
+      font-size: 3em;
+    }
+
+    nav > ul > li > a > span {
+      display: none;
+    }
+
+    /*----FIN NAV-----*/
+  }
+}
+
+/*-------------------------------------------------------*/
+/*--------------------------------------*/
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 98;
+}
+
+h1 span {
+  opacity: 0;
+  display: inline-block;
+  animation: animate 1s linear forwards;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+    filter: blur(0px);
+  }
+}
+h1 span:nth-child(1) {
+  animation-delay: 1s;
+}
+h1 span:nth-child(2) {
+  animation-delay: 2s;
+}
+h1 span:nth-child(3) {
+  animation-delay: 2.5s;
+}
+h1 span:nth-child(4) {
+  animation-delay: 3s;
+}
+h1 span:nth-child(5) {
+  animation-delay: 3.5s;
+}
+h1 span:nth-child(6) {
+  animation-delay: 3.75s;
+}
+h1 span:nth-child(7) {
+  animation-delay: 4s;
+}
+
+h1 span:nth-child(10) {
+  animation-delay: 5s;
+}
+h1 span:nth-child(11) {
+  animation-delay: 5.5s;
+}
+h1 span:nth-child(12) {
+  animation-delay: 5.75s;
+}
+
+.audiogta {
+  display: none;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popupcontain {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 2em;
+  border: 100px;
+}
+
+#bouton.open {
+  display: block !important;
+  box-shadow: black;
+}
+
+.bouton2 {
+  border-radius: 10px;
+}
+
+#bouton3 {
+  border-radius: 40px;
+  width: 20%;
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  height: 15%;
+}
+
+#bouton3.active {
+  display: none;
+  display: block !important;
+}
+
+#bouton {
+  max-width: 500px;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 15px;
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  display: none;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

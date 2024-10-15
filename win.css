@@ -1,0 +1,270 @@
+@import url("https://fonts.cdnfonts.com/css/new-walt-disney-font");
+
+* {
+  box-sizing: border-box;
+
+  /*
+  La propriété box-sizing détermine comment la largeur et 
+  la hauteur totales d'un élément sont calculées.
+
+  Par défaut, box-sizing est défini sur content-box, 
+  ce qui signifie que la largeur et la hauteur spécifiées 
+  d'un élément n'incluent pas le padding et les bordures. 
+  En conséquence, la taille réelle de l'élément est augmentée 
+  par la largeur des bordures et le padding.
+
+  Lorsque box-sizing est défini sur border-box, 
+  la largeur et la hauteur spécifiées d'un élément incluent 
+  le padding et les bordures. 
+  Cela signifie que la taille totale de l'élément reste la même, 
+  peu importe la quantité de padding ou l'épaisseur 
+  des bordures.
+
+  L'utilisation de * { box-sizing: border-box; } n'est pas 
+  obligatoire, mais c'est une bonne pratique largement adoptée 
+  pour faciliter la gestion des mises en page en CSS. 
+  Elle permet d'éviter les calculs complexes de dimensions 
+  et améliore la consistance de l'apparence des éléments sur 
+  la page.
+
+  */
+}
+
+html,
+body {
+  height: 100%;
+
+  font-family: "New Walt Disney Font", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  position: relative;
+
+  canvas {
+    /* display: none; */
+    position: absolute;
+    top: 82px;
+    bottom: 19px;
+    left: 90px;
+    width: 91%;
+    height: 86%;
+    z-index: 1;
+  }
+
+  #toggleCanvasButton {
+    position: absolute;
+    top: 2.7%;
+    left: 12%;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-style: none;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    font-family: "New Walt Disney Font", sans-serif;
+    font-size: 25px;
+  }
+
+  .container {
+    /* background-image: url(/images/win/cartoon_landscape.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    text-align: center;
+    color: white; */
+
+    background-image: url("/images/win/cartoon_landscape.png");
+    background-size: contain;
+    /* Pour contenir l'image dans son intégralité
+      sans l'étirer ou cacher des parties de l'image*/
+    min-width: 194vh;
+    max-width: 194vh;
+    /* Pour coller l'image au bord du viewport*/
+    min-height: 100vh;
+    max-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /*Tous les enfants de cette image se placeront 
+      en fonction de cette image*/
+    margin: 0 auto;
+    /*margin vertical à 0,
+       permet de centrer l'image avec auto*/
+
+    nav {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0rem;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    nav :hover {
+      color: white;
+    }
+
+    nav > a.logo {
+      display: none;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav > ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav > ul > li > a {
+      color: black;
+      text-decoration: none;
+      padding: 1rem;
+    }
+
+    nav > ul > li > a > i {
+      font-size: 3em;
+    }
+
+    nav > ul > li > a > span {
+      display: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .bulle {
+      position: absolute;
+      top: 450px;
+      right: 850px;
+      width: 500px;
+      padding: 80px;
+      background-color: white;
+      border: 2px solid black;
+      border-radius: 10px;
+      box-shadow: 5px 5px 0px black;
+      font-family: "New Walt Disney Font", sans-serif;
+      font-size: 30px;
+    }
+    .hidden {
+      display: none;
+    }
+
+    .bulle::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border: 10px solid;
+      border-color: white transparent transparent transparent;
+      transform: rotate(45deg);
+      box-shadow: -2px -2px 0px black;
+      word-wrap: break-word; /* Pour permettre les mots longs de passer à la ligne */
+      overflow: hidden; /* Pour éviter le débordement de texte */
+    }
+  }
+  .bulle p {
+    position: absolute;
+    width: 100%;
+    bottom: -12%;
+    right: 50%;
+    text-align: center;
+    color: crimson;
+  }
+  .close {
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .labels {
+    margin-bottom: 20rem;
+    margin-left: 90rem;
+
+    .label {
+      font-size: 5rem;
+      margin-bottom: 6rem;
+      color: black;
+      margin: 0;
+      text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05),
+        -10px 20px 5px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .mickey {
+    position: absolute;
+    width: 15%;
+    bottom: 15%;
+    left: 20%;
+  }
+}
+
+p {
+  position: absolute;
+  width: 10%;
+  bottom: 14%;
+  left: 2%;
+  font-family: "New Walt Disney Font", sans-serif;
+  color: black;
+}
+
+.Champion {
+  font-size: 40px;
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+  border: solid black;
+  margin-bottom: 60px;
+  margin-top: 4.3rem;
+  text-align: center;
+  width: 80%;
+}
+
+.pictures {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: -60;
+  margin-top: 160px;
+  border-radius: 50% 50%;
+
+  img {
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    margin: 2px;
+    margin-left: -3rem;
+    border: solid 8px #000000;
+    transition: transform 0.5s ease-in-out;
+    z-index: 2;
+  }
+}
+
+img:hover {
+  transform: rotate(360deg);
+  border-color: rgb(255, 251, 0);
+}

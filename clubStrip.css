@@ -1,0 +1,346 @@
+@import url("https://fonts.cdnfonts.com/css/new-walt-disney-font");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  /* overflow: auto; */
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  background-color: black;
+
+  /*---------NAV------*/
+  nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0rem;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  nav :hover {
+    color: red;
+  }
+
+  nav>a.logo {
+    display: none;
+    color: white;
+    text-decoration: none;
+  }
+
+  nav>ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  nav>ul>li>a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+  }
+
+  nav>ul>li>a>i {
+    font-size: 3em;
+  }
+
+  nav>ul>li>a>span {
+    display: none;
+  }
+
+  /*----FIN NAV-----*/
+
+
+  .container {
+    background-image: url("images/club/stripclub.jpeg");
+    background-size: contain;
+    /* Pour contenir l'image dans son intégralité
+      sans l'étirer ou cacher des parties de l'image*/
+    min-width: 194vh;
+    max-width: 194vh;
+    /* Pour coller l'image au bord du viewport*/
+    min-height: 100vh;
+    max-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /*Tous les enfants de cette image se placeront 
+      en fonction de cette image*/
+    margin: 0 auto;
+    /*margin vertical à 0,
+       permet de centrer l'image avec auto*/
+
+    /* nav {
+            display: flex;
+            justify-content: space-between;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 0rem;
+            color: #fff;
+            margin-top: 10px;
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                list-style: none;
+                padding: 0;
+
+                li {
+                    margin: 1rem;
+
+                    a {
+                        display: flex;
+                        list-style: none;
+                        padding: 0;
+                        color: rgb(241, 240, 240);
+
+                        i {
+                            font-size: 3em;
+                        }
+
+                        span {
+                            display: none;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        nav :hover {
+            color: red;
+        } */
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  #minnie {
+    position: absolute;
+    width: 34%;
+    top: 34%;
+    left: 5%;
+  }
+
+  #pork {
+    position: absolute;
+    width: 18%;
+    top: 60%;
+    left: 30%;
+  }
+
+  #lapin {
+    position: absolute;
+    width: 18%;
+    top: 37%;
+    left: 49%;
+  }
+
+  #canard {
+    position: absolute;
+    width: 10%;
+    top: 37%;
+    right: 25%;
+    transform: scaleX(-1);
+  }
+
+  #pingouin {
+    /*Ne pas toucher, reglé à l'identique sur toutes
+      les pages!*/
+
+    position: absolute;
+    bottom: 0;
+    /* Colle l'image tout en bas de la div parente*/
+    right: 1%;
+    width: 20%;
+    height: auto;
+  }
+
+}
+
+/* Container des dialogues */
+.containerTalk {
+  position: relative;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Bouton next(exemple) and close */
+.close {
+  position: absolute;
+  text-align: center;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 10px;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  color: rgb(10, 1, 1);
+}
+
+.next {
+  position: absolute;
+  text-align: center;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 10px;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  color: rgb(10, 1, 1);
+}
+
+/* Porky bulle de dialogue */
+.popupPorky {
+  display: none;
+  position: fixed;
+  width: 20%;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Bugs bulle de dialogue */
+
+.popupBugs {
+  display: none;
+  position: fixed;
+  width: 20%;
+  top: 32%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Daffy Bulle de dialogue */
+
+.popupDaffy {
+  display: none;
+  position: fixed;
+  width: 20%;
+  top: 30%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Minnie Bulle de dialogue */
+
+.popupMinnie {
+  display: none;
+  position: fixed;
+  width: 20%;
+  top: 35%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Inspecteur foireux Bulle de dialogue */
+.popupFoireux {
+  display: none;
+  position: fixed;
+  width: 20%;
+  top: 50%;
+  right: 1%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Player choices */
+
+.popupJ1 {
+  display: none;
+  position: fixed;
+  width: 30%;
+  top: 30%;
+  right: 35%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popupJ2 {
+  display: none;
+  position: fixed;
+  width: 20%;
+  top: 30%;
+  right: 15%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Devinette  */
+
+#devinette {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}

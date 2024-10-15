@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Où est Mickey | Club</title>
+    <link rel="stylesheet" href="clubStrip.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" />
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">Logo</a>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-house-fill"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Minnie personnage -->
+        <img id="minnie" src="./images/club/minnie-diva-photoroom.png" alt="minnie">
+        <div class="containerTalk">
+            <div id="minnieMessage" class="popupMinnie">
+                <span class="close" id="closeMinnie">X</span>
+                <p>Minnie est entrain de chanter d’une voix mélodieuse, et vous pouvez la voire donné des coups de pieds
+                    discretement a Porky qui a les mains baladeuse.<br>
+                    “Hey mon mignon, je suis désolé mais ici tout passe par bugs “</p>
+            </div>
+        </div>
+        <!-- Porky Chris-P Bacon personnage -->
+        <img id="pork" src="./images/club/porkeatingbacon-Photoroom.png-Photoroom.png" alt="pork">
+        <div class="containerTalk">
+            <div id="porkyMessage" class="popupPorky">
+                <span class="close" id="closePorky">X</span>
+                <p>Un petit cochonnet bien gras danse en mangeant du bacon, vous pouvez voire toute la cellulite de son
+                    ventre dansait également. <br>
+                    “Bonsoir ! N’est-ce pas le meilleur endroit du monde ? Aaah on se sent vivant”</p>
+            </div>
+        </div>
+        <div class="containerTalk">
+            <div id="porkyMessage2" class="popupPorky">
+                <span class="close" id="closePorky2">X</span>
+                <p>"Plus c’est gros ! Et plus j’aime ! Oh nom d’une tarte au concombre , que tout les saints me
+                    pardonnent."</p>
+            </div>
+        </div>
+    </div>
+    <!-- Bugs Bunny The mac personnage -->
+    <img id="lapin"
+        src="./images/club/bugs-bunny-as-a-pimp-he-has-a-lot-money-in-his-hand-and-a-cigar-in-his-mouth-he-has-a-demonic-laug-Photoroom.png-Photoroom.png"
+        alt="bugbunny">
+    <div class="containerTalk">
+        <div id="bugsMessage" class="popupBugs">
+            <span class="close" id="closeBugs">X</span>
+            <p>"Bienvenue dans le meilleur club de toute la ville, ici tout vos rêves deviendront réalité. Asseyez vous
+                s’il
+                vous plait ! Prennez un verre ! Daffy ! Daffy ! Met le premier verre sur la maison, nous avons un
+                nouveau
+                client.
+                Vous êtes ici chez vous, mais attention , n’oubliez pas de suivre les régles."</p>
+        </div>
+    </div>
+    <div id="bugsMessage2" class="popupBugs">
+        <span class="close" id="closeBugs2">X</span>
+        <p>"Quoi ? Tu veux questionné Minnie ? Pour une enquête, c’est pas vraiment le style de la maison. Mais Je vais
+            être bon joueur, repond une de mes devinettes et je te laisse aller lui parler. <br>
+            "Mon premier est le contraire de mince et mon deuxième est le contraire de fou, qui suis-je ?" Bugs se prend
+            une crise de four rire.</p>
+    </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="devinette">
+        <p>"Mon premier est le contraire de mince et mon deuxième est le contraire de fou, qui suis-je ?"</p>
+        <input type="text" id="promptInput">
+        <button id="promptOk">OK</button>
+        <button id="promptCancel">Je ne sais pas</button>
+    </div>
+    <!-- Daffy The Bartender personnage -->
+    <img id="canard"
+        src="./images/club/daffy-duck-wearing-as-a-bartender-he-looks-completely-stupid-both-of-his-eyes-is-looking-in-a-diff-Photoroom.png"
+        alt="daffybartender">
+    <div class="containerTalk">
+        <div id="daffyMessage" class="popupDaffy">
+            <span class="close" id="closeDaffy">X</span>
+            <p>Le barman vous ignore, trop préocupé par Inspecteur Foireux qui lui raconte ses exploits passée.</p>
+        </div>
+    </div>
+    <div class="containerTalk">
+        <div id="daffyMessage2" class="popupDaffy">
+            <span class="next" id="nextDaffy">>>></span>
+            <p>Le bosff m’a diff que fous afez un ferre sur la maifon, qu’eff que je fous fferre ?</p>
+        </div>
+    </div>
+    <div class="containerTalk">
+        <div id="daffyMessage3" class="popupDaffy">
+            <span class="close" id="closeDaffy2">X</span>
+            <p>Daffy vous regarde droit dans les yeux un instant, vous pouvez lire dans ces iris qu'il vous pense
+                faible. Il vous sert un verre d'eau.</p>
+        </div>
+    </div>
+    <div class="containerTalk">
+        <div id="daffyMessage4" class="popupDaffy">
+            <span class="next" id="nextDaffy2"><a href="gameOver.html">>>></a></span>
+            <p>"Fa f'est une bonne idée!" <br>
+                Daffy shake un cocktail avec plusieurs spiriteux derriére son bar que vous ne pouvez pas reconnaitre.
+                <br>
+                "Et foilà, fa fe boit en une fois, fanté ! <br>
+                Il pose un verre devant vous, vous le buvez sec.
+            </p>
+        </div>
+    </div>
+    <!-- Player choice -->
+    <div class="containerTalk">
+        <div id="playerChoice1" class="popupJ1">
+            <span class="next" id="nextPlayer1">>>></span>
+            <p>"Tavernier ! Donne moi ta meilleur boisson !"</p>
+        </div>
+    </div>
+    <div class="containerTalk">
+        <div id="playerChoice2" class="popupJ2">
+            <span class="next" id="nextPlayer2">>>></span>
+            <p>"Un verre d'eau, merci."</p>
+        </div>
+    </div>
+    <!-- Inspecteur Foireux Personnage -->
+    <img id="pingouin" src="./images/hercule.png" alt="inspecteur">
+    <div class="containerTalk">
+        <div id="foireuxMessage" class="popupFoireux">
+            <span class="close" id="closeFoireux">X</span>
+            <p>"Aaaah , cela faisait une eternité que je n’était pas venu ici, tant de souvenir, l’alcool frelaté qui
+                vous donne du beaume au coeur , la musique qui rythme vos pieds dansant , les hôtesse qui .... Enfin
+                bref , retournons à l’enquête , aller parler à Bugs Bunny avant quoi que ce soit, puis aprés aller voire
+                Minnie, nous devons savoir si quelqu’un en voulait a
+                Mickey.
+                Je vais aller boi.. enquêter au bar si je peux tirer des informations utiles."</p>
+        </div>
+    </div>
+    <div class="containerTalk">
+        <div id="foireuxMessage2" class="popupFoireux">
+            <span class="close" id="closeFoireux2">X</span>
+            <p>J’hésite encore.. entre le cocktail le cercueil ou le trompe la mort.... Aaah ! Vous êtes là, vous n’avez
+                toujours pas parlé a Minnie ??? Le temps presse, dêpechez vous ! Un tueur cour dans la nature bne
+                l’oubliez pas</p>
+        </div>
+    </div>
+    <script src="./script/clubStrip.js"></script>
+</body>
+
+</html>
